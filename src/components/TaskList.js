@@ -1,7 +1,9 @@
 import React, { Component }  from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { View, Text, ListView, StyleSheet  } from 'react-native';
+import { View, ListView, StyleSheet  } from 'react-native';
+
+import TaskRow from './TaskRow';
 
 function mapStateToProps(state) {
   return {
@@ -32,7 +34,7 @@ class TaskList extends Component {
 
   renderRow = (todo) => {
     return (
-      <Text>{ todo.task } </Text>
+      <TaskRow todo={ todo } />
     )
   }
 
@@ -52,7 +54,7 @@ class TaskList extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 10
+    paddingTop: 40
   }
 })
 
